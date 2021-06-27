@@ -1,0 +1,88 @@
+* {
+  scrollbar-width: thin;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: whitesmoke;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 3px;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+a,
+.a-like {
+  /*color: #0366d6;*/
+  color: gray;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+    text-shadow: 0 0 5px lightgray;
+  }
+}
+
+code {
+  color: #e01a76;
+}
+
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+@media (min-width: 900px) {
+  .container {
+    max-width: 1500px;
+  }
+}
+
+.fade {
+  transition: 70ms;
+}
+
+.blink_me {
+  animation: blinker 1s step-end infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.jumbotron {
+  background: rgba(245, 245, 245, 0.5) !important;
+}

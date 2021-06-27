@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import auth from "../../handlers/SQLiteAuthHandler"
+import "./index.scss";
 
 
 export default class Login extends Component {
@@ -32,36 +34,37 @@ export default class Login extends Component {
 
 
 
-  render() {
-
-    return (
+  render = () =>
+    <div className="auth-layout">
+      <div className="auth-title">Вход на сайт</div>
       <form>
-        <div className="col-md-5 pl-0">
-          <button type="submit" disabled style={{ display: 'none' }} ></button>
-          <div className="form-group row">
-            <label htmlFor="inputName" className="col-sm-2 col-form-label">Ф.И.О.</label>
-            <div className="col-sm-10">
+        <div className="auth-section">
+          <div>
+            <label htmlFor="inputName" className="auth-section-label">Ф.И.О.</label>
+            <div className="auth-section-input">
               <input type="text" className="form-control" id="inputName" onBlur={() => this.validate("Name")} />
               <div id="feedbackName"></div>
             </div>
           </div>
-          <div className="form-group row">
-            <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Пароль</label>
-            <div className="col-sm-10">
+          <div>
+            <label htmlFor="inputPassword" className="auth-section-label">Пароль</label>
+            <div className="auth-section-input">
               <input type="password" className="form-control" id="inputPassword" onBlur={() => this.validate("Password")} />
               <div id="feedbackPassword"></div>
             </div>
           </div>
         </div>
-        <div className="col-md-3 mt-5 pl-0">
+        <div className="auth-section">
           <hr />
-          <button
-            className="btn btn-outline-primary"
-            type="button"
-            onClick={() => this.props.login(document.getElementById("inputName").value, document.getElementById("inputPassword").value)}
-          >Войти</button>
+          <div className="auth-footer">
+            <button
+              className="btn btn-outline-secondary"
+              type="button"
+              onClick={() => this.props.login(document.getElementById("inputName").value, document.getElementById("inputPassword").value)}
+            >Войти</button>
+            <span className="a-like">Зарегистрироваться</span>
+          </div>
         </div>
       </form>
-    );
-  }
+    </div>
 }
